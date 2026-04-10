@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { Suspense, useMemo, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -59,7 +59,7 @@ function formatSelectedDate(dateText: string) {
   })
 }
 
-export default function NewSchedulePage() {
+function NewSchedulePageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -210,5 +210,13 @@ export default function NewSchedulePage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function NewSchedulePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-zinc-50" />}>
+      <NewSchedulePageContent />
+    </Suspense>
   )
 }
