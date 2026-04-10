@@ -55,7 +55,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm shadow-lg">
         <CardHeader className="space-y-2 text-center">
           <CardTitle className="text-2xl font-bold tracking-tight">
-            SyncTeam
+            Best Scheduler
           </CardTitle>
           <CardDescription>
             부여받은 직원 코드를 입력하고 시작하세요.
@@ -68,7 +68,7 @@ export default function LoginPage() {
               <Label htmlFor="employee-code">직원 코드</Label>
               <Input
                 id="employee-code"
-                placeholder="예: EMP-001"
+                // placeholder="예: EMP-001"
                 value={employeeCode}
                 onChange={(e) => setEmployeeCode(e.target.value)}
                 required
